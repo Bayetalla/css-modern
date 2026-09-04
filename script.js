@@ -1,18 +1,28 @@
-// Sélection de l'élément racine :root
-const root = document.documentElement;
+document.addEventListener("DOMContentLoaded", () => {
+  const burgerBtn = document.getElementById("burgerBtn");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
 
-// Modifier une variable via JS
-function changerCouleurJS() {
-  root.style.setProperty('--color-primary', '#00E676');
-}
+  if (!burgerBtn || !sidebar || !overlay) return;
 
-// Lire une variable via JS
-function lireVariableJS() {
-  const val = getComputedStyle(root).getPropertyValue('--color-primary').trim();
-  alert('Valeur de --color-primary : ' + val);
-}
+  const toggleMenu = () => {
+    burgerBtn.classList.toggle("active");
+    sidebar.classList.toggle("active");
+    overlay.classList.toggle("active");
 
-// Basculer la classe .theme-warm pour tester la surcharge locale
-function toggleTheme() {
-  document.body.classList.toggle('theme-warm');
-}
+    // Bloque le scroll arrière-plan quand le menu est ouvert
+    document.body.style.overflow = sidebar.classList.contains("active")
+      ? "hidden"
+      : "";
+  };
+
+  burgerBtn.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
+
+  // Ferme automatiquement le menu sur redimensionnement vers un grand écran
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 600 && sidebar.classList.contains("active")) {
+      toggleMenu();
+    }
+  });
+});

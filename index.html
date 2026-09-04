@@ -3,41 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Démo Variables & Calc CSS</title>
+    <title>Projet Pratique - CSS calc() Mastery</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="entete">
-      <h1>Laboratoire CSS Variables & Calc</h1>
-      <div class="actions">
-        <button onclick="toggleTheme()">
-          Basculer Thème Chaud (.theme-warm)
-        </button>
-        <button onclick="changerCouleurJS()">
-          Changer via JS (--color-primary)
-        </button>
-        <button onclick="lireVariableJS()">Lire la Variable JS</button>
-      </div>
-    </header>
+    <!-- Bouton Burger Mobile -->
+    <button class="burger-btn" id="burgerBtn" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-    <div class="layout">
-      <aside class="sidebar">
-        <h2>Sidebar</h2>
-        <p>Largeur fixe : 280px</p>
-      </aside>
+    <!-- Overlay sombre pour mobile -->
+    <div class="sidebar-overlay" id="overlay"></div>
 
-      <main class="main">
-        <div class="carte">
-          <h2>Carte Principale</h2>
-          <p>
-            Utilise <code>var(--color-primary)</code>,
-            <code>var(--spacing-md)</code>, et <code>var(--raduis-card)</code>.
-          </p>
-          <div class="badge">Propriété typée @property (--hue)</div>
+    <!-- Sidebar Fixe / Menu -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Nav</h2>
+    </aside>
+
+    <!-- Contenu Principal -->
+    <main class="main">
+      <!-- Hero Section avec Taille Fluide -->
+      <section class="hero">
+        <h1>Bienvenue sur le Dashboard</h1>
+      </section>
+
+      <!-- Grille Manuelle -->
+      <section class="grid">
+        <div class="col-4 card">
+          <h3>Statistique 1</h3>
+          <div class="tooltip-container">
+            Hover moi
+            <span class="tooltip">Info Tooltip</span>
+          </div>
         </div>
-      </main>
-    </div>
 
-    <script src="script.js"></script>
+        <div class="col-4 card">
+          <h3>Statistique 2</h3>
+        </div>
+
+        <div class="col-4 card">
+          <h3>Statistique 3</h3>
+        </div>
+      </section>
+
+      <!-- Élément Animé Dynamique -->
+      <section class="el">
+        <p>Zone de contenu dynamique</p>
+      </section>
+    </main>
+
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
