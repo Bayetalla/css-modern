@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Démo Variables & Calc CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="entete">
+      <h1>Laboratoire CSS Variables & Calc</h1>
+      <div class="actions">
+        <button onclick="toggleTheme()">
+          Basculer Thème Chaud (.theme-warm)
+        </button>
+        <button onclick="changerCouleurJS()">
+          Changer via JS (--color-primary)
+        </button>
+        <button onclick="lireVariableJS()">Lire la Variable JS</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Largeur fixe : 280px</p>
+      </aside>
+
+      <main class="main">
+        <div class="carte">
+          <h2>Carte Principale</h2>
+          <p>
+            Utilise <code>var(--color-primary)</code>,
+            <code>var(--spacing-md)</code>, et <code>var(--raduis-card)</code>.
+          </p>
+          <div class="badge">Propriété typée @property (--hue)</div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
